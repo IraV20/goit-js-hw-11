@@ -9,18 +9,20 @@
   </head>
   <body>
     <section>
-      <input
-        type="text"
-        class="serach"
-        id="text-input"
-        required
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
+      <form>
+        <input
+          type="text"
+          name="search"
+          class="search"
+          id="text-input"
+          required
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+
       <span class="loader is-hidden"></span>
-      <div class="gallery">
-        <span class="loader"></span>
-      </div>
+      <div class="gallery"></div>
     </section>
     <script type="module" src="./main.js"></script>
   </body>
