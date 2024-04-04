@@ -6,11 +6,15 @@ export default function searchImg(userValue) {
 
   const url = BASE_URL + END_POINT + PARAMS;
 
-  return fetch(url).then(res => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      throw new Error(res.status);
-    }
-  });
+  return fetch(url)
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error(res.status);
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
 }
