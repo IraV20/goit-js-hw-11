@@ -5,7 +5,7 @@ export const imgList = document.querySelector('.gallery');
 
 function templateImg(img) {
   return `<a href="${img.largeImageURL}" class="gallery-card">
-          <img src="${img.webformatURL}" alt="${img.tags}" />
+          <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy"/>
     
         <ul class="desc">
           <li class="desc-text">Likes<span>${img.likes}</span></li>
@@ -17,7 +17,7 @@ function templateImg(img) {
 
 export default function renderImg(images) {
   const markup = images.hits.map(image => templateImg(image)).join('');
-  imgList.innerHTML = markup;
+  imgList.insertAdjacentHTML('beforeend', markup);
   let gallery = new SimpleLightbox('.gallery a', options);
   gallery.on('show.simplelightbox');
   gallery.refresh();
